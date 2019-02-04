@@ -46,7 +46,7 @@
 
     var newBtn = btn.cloneNode(false);
     newBtn.href = url;
-    newBtn.textContent = "raw.githack";
+    newBtn.textContent = "Raw Githack";
     newBtn.removeAttribute("id");
 
     btn.parentNode.insertBefore(newBtn, btn.nextSibling);

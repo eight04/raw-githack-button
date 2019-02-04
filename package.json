@@ -4,7 +4,9 @@
   "description": "A userscript to add raw.githack.com button on Github.",
   "scripts": {
     "test": "eslint **/*.js",
-    "version": "userscript-meta -u raw-githack-button.user.js && git add ."
+    "preversion": "npm test",
+    "version": "userscript-meta -u raw-githack-button.user.js && git add .",
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
