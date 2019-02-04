@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "description": "A userscript to add raw.githack.com button on Github.",
   "scripts": {
-    "test": "eslint **/*.js"
+    "test": "eslint **/*.js",
+    "version": "userscript-meta -u raw-githack-button.user.js && git add ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eight04/raw-githack-button.git"
   },
-  "author": "eight <eight04@gmail.com> (http://github.com/eight04)",
+  "author": "eight <eight04@gmail.com> (https://github.com/eight04)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/eight04/raw-githack-button/issues"
