@@ -1,6 +1,6 @@
 {
   "name": "raw-githack-button",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A userscript to add raw.githack.com button on Github.",
   "scripts": {
     "test": "eslint **/*.js",
