@@ -3,6 +3,8 @@ raw-githack-button
 
 A userscript to add [raw.githack.com](https://raw.githack.com/) button on Github.
 
+![demo](https://i.imgur.com/2jkUtFP.png)
+
 Changelog
 ---------
 
