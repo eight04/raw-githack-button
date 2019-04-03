@@ -39,7 +39,7 @@
   function createButton(btn) {
     var url = btn.href;
     if (url.indexOf("gist.github.com") >= 0) {
-      url = url.replace("gist.github.com", "raw.githack.com");
+      url = url.replace("gist.github.com", "gist.githack.com");
     } else {
       url = url.replace(/github\.com\/([^/]+\/[^/]+)\/raw/, "raw.githack.com/$1");
     }
