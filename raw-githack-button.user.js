@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name Github raw.githack.com Button
-// @version 0.1.0
+// @version 0.1.1
 // @description A userscript to add raw.githack.com button on Github.
 // @homepageURL https://github.com/eight04/raw-githack-button#readme
 // @supportURL https://github.com/eight04/raw-githack-button/issues
