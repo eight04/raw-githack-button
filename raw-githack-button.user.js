@@ -28,7 +28,10 @@
   function replace(){
     // Check if raw-url button exists
     var btns, i;
-    btns = document.querySelectorAll(".file-actions a:not(.raw-githack)");
+    btns = document.querySelectorAll([
+      ".file-actions a:not(.raw-githack)", // gist
+      ".Box-header a:not(.raw-githack)" // normal page
+    ].join(","));
     for (i = 0; i < btns.length; i++) {
       if (btns[i].textContent == "Raw") {
         createButton(btns[i]);
