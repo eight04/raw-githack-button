@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name Github raw.githack.com Button
-// @version 0.1.1
+// @version 0.2.0
 // @description A userscript to add raw.githack.com button on Github.
 // @homepageURL https://github.com/eight04/raw-githack-button#readme
 // @supportURL https://github.com/eight04/raw-githack-button/issues
@@ -10,7 +10,6 @@
 // @include https://github.com/*
 // @include https://gist.github.com/*
 // @grant none
-// @require https://cdnjs.cloudflare.com/ajax/libs/sentinel-js/0.0.7/sentinel.min.js
 // ==/UserScript==
 
 (() => {
