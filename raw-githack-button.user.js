@@ -10,36 +10,35 @@
 // @include https://github.com/*
 // @include https://gist.github.com/*
 // @grant none
+// @require https://cdnjs.cloudflare.com/ajax/libs/sentinel-js/0.0.7/sentinel.min.js
 // ==/UserScript==
 
 (() => {
-  const container =
-    document.querySelector("#js-repo-pjax-container") ||
-    document.querySelector("#js-pjax-container");
+  const SELCTOR = [
+    ".file-actions a.Button[href*='/raw/']:not(.raw-githack-detected)", // gist
+    "a[data-testid='raw-button']:not(.raw-githack-detected)", // github
+  ].join(",")
 
-  if (container) {
-    new MutationObserver(function(){
-      replace();
-    }).observe(container, {childList: true, subtree: true});
-  }
+  sentinel.on(SELCTOR, el => createButton(el));
 
-  replace();
+  // replace();
   
-  function replace(){
-    // Check if raw-url button exists
-    var btns, i;
-    btns = document.querySelectorAll([
-      ".file-actions a:not(.raw-githack)", // gist
-      ".Box-header a:not(.raw-githack)" // normal page
-    ].join(","));
-    for (i = 0; i < btns.length; i++) {
-      if (btns[i].textContent == "Raw") {
-        createButton(btns[i]);
-      }
-    }
-  }
+  // function replace(btn){
+  //   var btns, i;
+  //   btns = document.querySelectorAll();
+  //   for (i = 0; i < btns.length; i++) {
+  //     if (btns[i].textContent == "Raw") {
+  //       createButton(btns[i]);
+  //     }
+  //   }
+  // }
 
   function createButton(btn) {
+    btn.classList.add("raw-githack-detected");
+    if (btn.textContent.trim() !== "Raw") {
+      return;
+    }
+
     var url = btn.href;
     if (url.indexOf("gist.github.com") >= 0) {
       url = url.replace("gist.github.com", "gist.githack.com");
@@ -53,16 +52,25 @@
     newBtn.removeAttribute("id");
 
     btn.parentNode.insertBefore(newBtn, btn.nextSibling);
-    btn.classList.add("raw-githack");
     
-    if (!btn.parentNode.classList.contains("btn-group")) {
-      var parent = btn.parentNode,
-        group = document.createElement("div");
+    if (!/btn-group|ButtonGroup/.test(btn.parentNode.className)) {
+      const parent = btn.parentNode;
+      const group = document.createElement("div");
       group.className = "btn-group";
       while (parent.childNodes.length) {
         group.appendChild(parent.childNodes[0]);
       }
       parent.appendChild(group);
+    }
+
+    const group = btn.parentNode;
+    for (let i = 0; i < group.children.length; i++) {
+      if (i < group.children.length - 1) {
+        group.children[i].classList.add("rounded-right-0", "border-right-0");
+      }
+      if (i >= 1) {
+        group.children[i].classList.add("rounded-left-0");
+      }
     }
   }
 })();
