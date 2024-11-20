@@ -28,6 +28,9 @@
     "include": [
       "https://github.com/*",
       "https://gist.github.com/*"
+    ],
+    "require": [
+      "https://cdnjs.cloudflare.com/ajax/libs/sentinel-js/0.0.7/sentinel.min.js"
     ]
   }
 }
