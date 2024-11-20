@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/eight04/raw-githack-button#readme",
   "devDependencies": {
-    "eslint": "^5.13.0",
+    "eslint": "^9.15.0",
     "userscript-meta-cli": "^0.4.2"
   },
   "userscript": {

@@ -13,6 +13,11 @@ Installation
 Changelog
 ---------
 
+* 0.2.0 (Nov 20, 2024)
+
+    - Fix: use sentinel to detect buttons.
+    - Fix: button group style.
+
 * 0.1.1 (Apr 3, 2019)
 
   - Fix: gist URL is wrong.

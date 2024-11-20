@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 (() => {
+  /* global sentinel */
   const SELCTOR = [
     ".file-actions a.Button[href*='/raw/']:not(.raw-githack-detected)", // gist
     "a[data-testid='raw-button']:not(.raw-githack-detected)", // github
